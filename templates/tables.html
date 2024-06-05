@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>TABLAS</h2>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>ci</th>
+            <th>apellidos</th>
+            <th>nombres</th>
+            <th>telefono</th>
+            <th>ipcliente</th>
+            <th>fecharegistro</th>
+        </tr>
+        {% for row in rows %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}</td>
+            <td>{{ row[4] }}</td>
+            <td>{{ row[5] }}</td>
+            <td>{{ row[6].strftime('%Y-%m-%d %H:%M') }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
